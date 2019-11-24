@@ -14,7 +14,7 @@ td {
 	border:1px solid #dcdcdc;
 	display:inline-block;
 	cursor:pointer;
-	color:#666666;
+	color:#424242;
 	font-size:13px;
 	font-weight:bold;
 	padding:12px 13px;
@@ -56,7 +56,7 @@ td {
     margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     padding: 15px;
     border: 1px solid #888;
-    width: 25%; /* Could be more or less, depending on screen size */
+    width: 462px; /* Could be more or less, depending on screen size */
 }
 
 input[type="text"] {
@@ -67,7 +67,7 @@ input[type="text"] {
 }
 
 #radioButtons {
-    margin: 3px 0 3px 0;
+    margin: 5px 0 5px 0;
     display:inline-block;
 }
 

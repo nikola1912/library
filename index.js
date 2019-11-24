@@ -14,15 +14,15 @@ function addBookToLibrary() {
   
 };
 
-function insertBookInfo() {
-  document.getElementById('form').style.display='block';
-}
-
 const knjiga1 = new Book('knjiga1', 'Sasa', 323, true);
 const knjiga2 = new Book('knjiga2', 'Petar', 121, true);
 const knjiga3 = new Book('knjiga3', 'Jovan', 50, false);
 
 myLibrary.push(knjiga1,knjiga2,knjiga3);
+
+function clearForm() {
+
+}
 
 function render() {
   myLibrary.forEach(book => {
@@ -36,17 +36,20 @@ function render() {
   });
 };
 
-document.getElementById("addBooks").addEventListener("click", insertBookInfo);
+document.getElementById("addBooks").addEventListener("click", function() {
+  document.getElementById('form').style.display='block';
+});
+
+document.getElementById("cancelNewBook").addEventListener("click", function() {
+  document.getElementById('form').style.display='none';
+  document.getElementById('form').reset();
+});
+
+window.onclick = function(event) {
+  if (event.target == form) {
+    form.style.display = "none";
+    document.getElementById('form').reset();
+  }
+}
 
 render();
-
-
-
-/* const knjiga1 = new Book('Kurac', 'Sasa', 300, true);
-
-console.log(knjiga1.title);
-console.log(knjiga1.author);
-console.log(knjiga1.pages);
-console.log(knjiga1.ifRead);
-console.log("--------------");
-console.log(knjiga1.info()); */

@@ -9,7 +9,7 @@
     </head>
     <body>
 
-        <div id="form">
+        <form id="form">
             <div id="form-content">
                 <div id="container">
                     <div>
@@ -34,6 +34,13 @@
                     </div>
 
                     <div>
+                        <div>
+                            <label for="year"><b>Year</b></label>
+                        </div>
+                        <input type="text" placeholder="Release year" name="year" required>
+                    </div>
+
+                    <div>
                         <label id="ifReadLabel" for="ifRead"><b>Have you read the book?</b></label>
                         <div id="radioButtons">
                             <input type="radio" name="ifRead" value="true">Yes<br>
@@ -41,10 +48,11 @@
                         </div>       
                     </div>
 
-                    <button id="submitNewBook" type="submit">Submit</button>
+                    <button id="cancelNewBook" class="buttons" type="">Cancel</button>
+                    <button id="submitNewBook" class="buttons" type="submit">Submit</button>
                 </div>
             </div>
-        </div>
+        </form>
 
         <table id="books">
             <tr><td>Row 1</td></tr>
