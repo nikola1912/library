@@ -14,6 +14,10 @@ function addBookToLibrary() {
   
 };
 
+function insertBookInfo() {
+  document.getElementById('form').style.display='block';
+}
+
 const knjiga1 = new Book('knjiga1', 'Sasa', 323, true);
 const knjiga2 = new Book('knjiga2', 'Petar', 121, true);
 const knjiga3 = new Book('knjiga3', 'Jovan', 50, false);
@@ -31,6 +35,8 @@ function render() {
     });
   });
 };
+
+document.getElementById("addBooks").addEventListener("click", insertBookInfo);
 
 render();
 

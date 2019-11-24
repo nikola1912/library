@@ -4,16 +4,55 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        <link rel="stylesheet" type="text/css" href="theme.css">
+        <link rel="stylesheet" type="text/css" href="style.css">
         <title>Library</title>
     </head>
     <body>
+
+        <div id="form">
+            <div id="form-content">
+                <div id="container">
+                    <div>
+                        <div>
+                            <label for="title"><b>Title</b></label>
+                        </div>
+                        <input type="text" placeholder="Book title" name="title" required>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="writer"><b>Writer</b></label>
+                        </div>
+                        <input type="text" placeholder="Book writer" name="writer" required>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="pages"><b>Pages</b></label>
+                        </div>
+                        <input type="text" placeholder="Number of pages" name="pages" required>
+                    </div>
+
+                    <div>
+                        <label id="ifReadLabel" for="ifRead"><b>Have you read the book?</b></label>
+                        <div id="radioButtons">
+                            <input type="radio" name="ifRead" value="true">Yes<br>
+                            <input type="radio" name="ifRead" value="false">No<br>
+                        </div>       
+                    </div>
+
+                    <button id="submitNewBook" type="submit">Submit</button>
+                </div>
+            </div>
+        </div>
 
         <table id="books">
             <tr><td>Row 1</td></tr>
             <tr><td>Row 2</td></tr>
             <tr><td>Row 3</td></tr>
         </table>
+
+        <button id="addBooks" class="buttons" type="button">Add Book</button>
 
     </body>
     <script src="index.js"></script>
