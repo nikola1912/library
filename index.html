@@ -53,46 +53,48 @@
                 </div>
             </div>
         </form>
-
-        <table id="books">
-            <thead>
-                <tr>
-                    <th>Title</th>
-                    <th>Author</th>
-                    <th>Pages</th>
-                    <th>Year</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Kad su cvetale tikve</td>
-                    <td>Dragoslav Mihailovic</td>
-                    <td>183</td>
-                    <td>1968</td>
-                </tr>
-                <tr>
-                    <td>Seobe</td>
-                    <td>Milose Crnjanski</td>
-                    <td>288</td>
-                    <td>1929</td>
-                </tr>
-                <tr>
-                    <td>Na Drini cuprija</td>
-                    <td>Ivo Andric</td>
-                    <td>318</td>
-                    <td>1945</td>
-                </tr>
-                <tr>
-                    <td>Na Drini cuprija</td>
-                    <td>Ivo Andric</td>
-                    <td>318</td>
-                    <td>1945</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <button id="addBooks" class="buttons" type="button">Add Book</button>
+        <div id="tableContainer">
+            <div id="addBooks">
+                <button class="buttons" type="button">Add Book</button>
+            </div>
+            <table id="booksTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Year</th>
+                    </tr>
+                </thead>
+                <tbody id="books">
+                    <tr>
+                        <td>Kad su cvetale tikve</td>
+                        <td>Dragoslav Mihailovic</td>
+                        <td>183</td>
+                        <td>1968</td>
+                    </tr>
+                    <tr>
+                        <td>Seobe</td>
+                        <td>Milose Crnjanski</td>
+                        <td>288</td>
+                        <td>1929</td>
+                    </tr>
+                    <tr>
+                        <td>Na Drini cuprija</td>
+                        <td>Ivo Andric</td>
+                        <td>318</td>
+                        <td>1945</td>
+                    </tr>
+                    <tr>
+                        <td>Na Drini cuprija</td>
+                        <td>Ivo Andric</td>
+                        <td>318</td>
+                        <td>1945</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
 
     </body>
-    <script src="Aindex.js"></script>
+    <script src="index.js"></script>
 </html>

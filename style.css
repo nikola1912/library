@@ -1,13 +1,39 @@
 body {
-    font-family: Times, serif;
+    margin: 0;
+    font-family: Verdana, sans-serif;
+}
+
+#tableContainer {
+    margin-top: 0px;
+}
+
+#addBooks {
+    text-align: center;
+    padding: 20px 0;
+    background-color: rgb(233, 233, 233);
+}
+
+#booksTable {
+    background-color: rgba(228, 228, 228, 0.555);
+    margin: 0 auto; 
+    padding: 10px 0;
 }
 
 td {
-    padding: 0 5px 0 5px;
+    padding: 0 5px;
 }
 
 tbody td:nth-child(3), tbody td:nth-child(4) {
     text-align: center;
+}
+
+tbody tr {
+    height: 30px;
+    margin: 5px 0;
+}
+
+thead th {
+    padding: 0 30px;
 }
 
 .buttons {
