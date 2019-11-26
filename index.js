@@ -27,6 +27,26 @@ function addBookToLibrary() {
   myLibrary.push(newBook);
 };
 
+function checkFormValidation() {
+  let radioTrigger = 0;
+  let form = document.getElementById("form").elements;
+  for (let formElement of form) {
+    if (formElement.type == "text" || formElement.type == "number") {
+      if (formElement.value == "") {
+        return false;
+      }
+    } else if (formElement.type == "radio") {
+      if (!formElement.checked) {
+        radioTrigger += 1;
+      }
+    }
+  } 
+  if (radioTrigger == 2) {
+    return false;
+  }
+  return true;
+}
+
 function render() {
   let tableOfBooks = document.getElementById("books");
   tableOfBooks.innerHTML = "";
@@ -51,10 +71,14 @@ document.getElementById("cancelNewBook").addEventListener("click", function() {
 });
 
 document.getElementById("submitNewBook").addEventListener("click", function() {
-  addBookToLibrary();
-  render();
-  document.getElementById('form').style.display='none';
-  document.getElementById('form').reset();
+  if (checkFormValidation()) {
+    addBookToLibrary();
+    render();
+    document.getElementById('form').reset();
+    document.getElementById('form').style.display='none';
+  } else {
+    alert("Fill out all the information");
+  }
 });
 
 window.onclick = function(event) {
@@ -75,8 +99,3 @@ const knjiga3 = new Book('knjiga3', 'Jovan', 50, 1990, false);
 myLibrary.push(knjiga1,knjiga2,knjiga3);
 
 render();
-
-
-/* function handleForm(event) { 
-  event.preventDefault(); 
-}  */
