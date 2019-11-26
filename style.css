@@ -3,8 +3,11 @@ body {
 }
 
 td {
-    text-align: center;
     padding: 0 5px 0 5px;
+}
+
+tbody td:nth-child(3), tbody td:nth-child(4) {
+    text-align: center;
 }
 
 .buttons {

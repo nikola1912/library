@@ -92,9 +92,13 @@ window.onclick = function(event) {
   event.preventDefault(); 
 }); */
 
-const knjiga1 = new Book('knjiga1', 'Sasa', 323, 2019, true);
-const knjiga2 = new Book('knjiga2', 'Petar', 121, 2009, true);
-const knjiga3 = new Book('knjiga3', 'Jovan', 50, 1990, false);
+const knjiga4 = new Book('knjiga1', 'Sasa', 323, 2019, true);
+const knjiga5 = new Book('knjiga2', 'Petar', 121, 2009, true);
+const knjiga6 = new Book('knjiga3', 'Jovan', 50, 1990, false);
+
+const knjiga1 = new Book('Kad su cvetale tikve', 'Dragoslav Mihailovic', 183, 1968, true);
+const knjiga2 = new Book('Seobe', 'Milose Crnjanski', 288, 1929, true);
+const knjiga3 = new Book('Na Drini cuprija', 'Ivo Andric', 318, 1945, true);
 
 myLibrary.push(knjiga1,knjiga2,knjiga3);
 
