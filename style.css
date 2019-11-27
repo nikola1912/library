@@ -1,22 +1,35 @@
 body {
     margin: 0;
     font-family: Verdana, sans-serif;
+    display: flex;
+    justify-content: center;
 }
 
 #tableContainer {
-    margin-top: 0px;
+    display: flex;
+    flex-direction: column;
+    width: 760px;
+}
+
+#header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+#header h1 {
+    font-weight: normal;
 }
 
 #addBooks {
-    text-align: center;
-    padding: 20px 0;
-    background-color: rgb(233, 233, 233);
+    
 }
 
 #booksTable {
-    background-color: rgba(228, 228, 228, 0.555);
-    margin: 0 auto; 
-    padding: 10px 0;
+    background-color: rgba(255, 255, 255, 0.555);
+    margin: 10px 0;
+    border-collapse: collapse;
 }
 
 td {
@@ -28,12 +41,23 @@ tbody td:nth-child(3), tbody td:nth-child(4) {
 }
 
 tbody tr {
-    height: 30px;
-    margin: 5px 0;
+    height: 70px;
+    border: 1px solid #a5a5a5;
+    border-width: 0 0 0.5px;
+}
+
+thead th:nth-child(1), thead th:nth-child(2) {
+    text-align: left;
+    padding-left: 5px;
 }
 
 thead th {
-    padding: 0 30px;
+    padding: 12px 40px;
+}
+
+thead tr {
+    border: 1px solid #a5a5a5;
+    border-width: 0 0 2px;
 }
 
 .buttons {
@@ -46,7 +70,7 @@ thead th {
 	color:#424242;
 	font-size:13px;
 	font-weight:bold;
-	padding:12px 13px;
+	padding: 15px 20px;
 	text-decoration:none;
 }
 

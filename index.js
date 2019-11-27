@@ -15,7 +15,7 @@ function addBookToLibrary() {
   let form = document.getElementById("form").elements;
   let formValues = [];
   for (let formElement of form) {
-    if (formElement.type == "text") {  //ovde si obriso  || formElement.checked
+    if (formElement.type == "text") { 
       formValues.push(formElement.value);  
     } else if (formElement.checked) {
       formValues.push(formElement.value == "true");
@@ -87,14 +87,6 @@ window.onclick = function(event) {
     document.getElementById('form').reset();
   }
 }
-
-/* document.getElementById("form").addEventListener('submit', function(event) { 
-  event.preventDefault(); 
-}); */
-
-const knjiga4 = new Book('knjiga1', 'Sasa', 323, 2019, true);
-const knjiga5 = new Book('knjiga2', 'Petar', 121, 2009, true);
-const knjiga6 = new Book('knjiga3', 'Jovan', 50, 1990, false);
 
 const knjiga1 = new Book('Kad su cvetale tikve', 'Dragoslav Mihailovic', 183, 1968, true);
 const knjiga2 = new Book('Seobe', 'Milose Crnjanski', 288, 1929, true);
