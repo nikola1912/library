@@ -64,9 +64,9 @@ function render() {
         let ifReadButton = newRow.insertCell();
         let deleteButton = newRow.insertCell();
         if (book[key]) {
-          ifReadButton.innerHTML = '<button class="readButton"></button>';
+          ifReadButton.innerHTML = `<button data-index-number=${book.index} class="readButton"></button>`;
         } else {
-          ifReadButton.innerHTML = '<button class="notReadButton"></button>';
+          ifReadButton.innerHTML = `<button data-index-number=${book.index} class="notReadButton"></button>`;
         }
         deleteButton.innerHTML = `<button data-index-number=${book.index} class="delete"></button>`
       }
@@ -100,7 +100,7 @@ document.getElementById("books").addEventListener("click", function(e) {
     e.target.classList.toggle("notReadButton");
     myLibrary.map((book, index) => {      //REVERSES ifRead VALUE OF THE BOOK OBJECT
       if (book.index == e.target.dataset.indexNumber) {
-        book.index.ifRead = !book.index.ifRead;
+        book.ifRead = !book.ifRead;
       }
     });
   } else if (/delete/.test(e.target.className)) {
