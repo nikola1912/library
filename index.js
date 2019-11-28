@@ -1,11 +1,13 @@
 let myLibrary = [];
+let index = -1;
 
-function Book(title, author, pages, year, ifRead) {
+function Book(title, author, pages, year, ifRead, index) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.year = year
   this.ifRead = ifRead;
+  this.index = index;
   this.info = function() {
     return `${this.title} by ${this.author}, ${this.pages}.pages, ${this.ifRead ? 'is read' : 'not read yet'}.`;
   }
@@ -23,7 +25,8 @@ function addBookToLibrary() {
       formValues.push(Number(formElement.value));
     }
   }
-  let newBook = new Book(...formValues);
+  index += 1;
+  let newBook = new Book(...formValues, index);
   myLibrary.push(newBook);
 };
 
@@ -53,7 +56,7 @@ function render() {
   myLibrary.forEach(book => {
     let newRow = document.getElementById("books").insertRow();
     Object.keys(book).forEach(key => {
-      if (key != "ifRead" && key != "info") {
+      if (key != "ifRead" && key != "info" && key != "index") {
         let newCell = newRow.insertCell();
         newCell.textContent = book[key];
       }
@@ -65,7 +68,7 @@ function render() {
         } else {
           ifReadButton.innerHTML = '<button class="notReadButton"></button>';
         }
-        deleteButton.innerHTML = '<button class="delete"></button>'
+        deleteButton.innerHTML = `<button data-index-number=${book.index} class="delete"></button>`
       }
     });
   });
@@ -91,11 +94,23 @@ document.getElementById("submitNewBook").addEventListener("click", function() {
   }
 });
 
-document.getElementById("books").addEventListener("click", function(e){
+document.getElementById("books").addEventListener("click", function(e) {
   if (/readButton|notReadButton/.test(e.target.className)) {
     e.target.classList.toggle("readButton"); 
     e.target.classList.toggle("notReadButton");
+    myLibrary.map((book, index) => {      //REVERSES ifRead VALUE OF THE BOOK OBJECT
+      if (book.index == e.target.dataset.indexNumber) {
+        book.index.ifRead = !book.index.ifRead;
+      }
+    });
+  } else if (/delete/.test(e.target.className)) {
+    myLibrary.map((book, index) => {      //DELETES THE BOOK OBJECT WHOSE index VALUE = indexNumber
+      if (book.index == e.target.dataset.indexNumber) {
+        myLibrary.splice(index, 1);
+      }
+    });
   }
+  render();
 });
 
 window.onclick = function(event) {
@@ -105,9 +120,9 @@ window.onclick = function(event) {
   }
 }
 
-const knjiga1 = new Book('Kad su cvetale tikve', 'Dragoslav Mihailovic', 183, 1968, true);
-const knjiga2 = new Book('Seobe', 'Milos Crnjanski', 288, 1929, true);
-const knjiga3 = new Book('Na Drini cuprija', 'Ivo Andric', 318, 1945, false);
+const knjiga1 = new Book('Kad su cvetale tikve', 'Dragoslav Mihailovic', 183, 1968, true, 7);
+const knjiga2 = new Book('Seobe', 'Milos Crnjanski', 288, 1929, true, 8);
+const knjiga3 = new Book('Na Drini cuprija', 'Ivo Andric', 318, 1945, false, 9);
 
 myLibrary.push(knjiga1,knjiga2,knjiga3);
 

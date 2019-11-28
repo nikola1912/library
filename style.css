@@ -106,11 +106,6 @@ thead tr {
 	background-color:#45f382;
 }
 
-.readButton:active {
-	position:relative;
-	top:1px;
-}
-
 .notReadButton {
 	background-color:#f53f27be;
 	border-radius:6px;
@@ -132,11 +127,6 @@ thead tr {
 
 .notReadButton:hover {
 	background-color:#ec270dbe;
-}
-
-.notReadButton:active {
-	position:relative;
-	top:1px;
 }
 
 .delete {
@@ -162,8 +152,15 @@ thead tr {
     color: #FFF;
     font-size: 2.5em;
     position: absolute;
-    text-align: ;
     line-height: 100%;
+}
+
+.delete:hover {
+    background-color: rgb(148, 148, 148);
+}
+
+.delete:active {
+    background-color: rgb(102, 102, 102);
 }
 
 #form {
