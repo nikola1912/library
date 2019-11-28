@@ -8,7 +8,7 @@ body {
 #tableContainer {
     display: flex;
     flex-direction: column;
-    width: 760px;
+    width: 860px;
 }
 
 #header {
@@ -32,12 +32,12 @@ td {
     padding: 0 5px;
 }
 
-tbody td:nth-child(3), tbody td:nth-child(4) {
+tbody td:nth-child(3), tbody td:nth-child(4),tbody td:nth-child(5), tbody td:nth-child(6) {
     text-align: center;
 }
 
 tbody tr {
-    height: 70px;
+    height: 80px;
     border: 1px solid #a5a5a5;
     border-width: 0 0 0.5px;
 }
@@ -80,32 +80,109 @@ thead tr {
 	top:1px;
 }
 
-.buttons:focus {
+.buttons:focus, .notReadButton:focus, .readButton:focus, .delete:focus {
     outline:0;
+}
+
+.readButton {
+	background-color:#4ff565be;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	cursor:pointer;
+	color:#5e5c5c;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 25px;
+    text-decoration:none;
+}
+
+.readButton::after {
+    content: "Read";
+}
+
+.readButton:hover {
+	background-color:#45f382;
+}
+
+.readButton:active {
+	position:relative;
+	top:1px;
+}
+
+.notReadButton {
+	background-color:#f53f27be;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	cursor:pointer;
+	color:#383737;
+	font-size:15px;
+	font-weight:bold;
+	padding:10px 14px;
+    text-decoration:none;
+}
+
+.notReadButton::after {
+    content: "Not read";
+}
+
+.notReadButton:hover {
+	background-color:#ec270dbe;
+}
+
+.notReadButton:active {
+	position:relative;
+	top:1px;
+}
+
+.delete {
+    background-color: rgba(10,10,10,0.2);
+    border: none;
+    border-radius: 100%;
+    cursor: pointer;
+    height: 32px;
+    max-height: 32px;
+    max-width: 32px;
+    min-height: 32px;
+    min-width: 32px;
+    width: 32px;
+    position: relative;
+}
+
+.delete::after {
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    content: '\d7';
+    color: #FFF;
+    font-size: 2.5em;
+    position: absolute;
+    text-align: ;
+    line-height: 100%;
 }
 
 #form {
     font-family: Arial, Helvetica, sans-serif;
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
+    display: none;
+    position: fixed;
     text-align: center;
-    z-index: 1; /* Sit on top */
+    z-index: 1;
     left: 0;
     top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.1); /* Black w/ opacity */
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.1);
     padding-top: 60px;
 }
 
 #form-content {
     background-color: #fefefe;
-    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto;
     padding: 15px;
     border: 1px solid #888;
-    width: 462px; /* Could be more or less, depending on screen size */
+    width: 462px;
 }
 
 input[type="text"], input[type="number"] {
